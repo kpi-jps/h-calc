@@ -14,7 +14,7 @@
  * @property {String} nominalDiameter Nominal diameter for a pipe segment
  * @property {String | null} hydrometerInfo Hydrometer info 
  * @property {Array<String>} sanitaryEquipments List of sanitary equipements
- * @property {Array<String>} pipeConnections List of pipe connections
+ * @property {PipeConnections} pipeConnections List of pipe connections
  * @property {Number} registers Number of registers in pipe segment
  */
 
