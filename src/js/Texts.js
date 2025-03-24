@@ -24,7 +24,7 @@ const Texts = Object.freeze({
     FLOW_RATE_WARNING: "Vazão escolhida é inferior a 15% do consumo diário!",
 
     //html texts
-    APP_NOT_WORK_IN_THIS_BROWSER: "A aplicação não funciona neste navegador! Use preferencialmente o Google Chrome!",
+    APP_NOT_WORK_IN_THIS_BROWSER: "A aplicação necessita do browser Google Chrome para funcionar!",
     TITLE: "H-calc",
     SUBTITLE: "Dimensionamento de instalações hidráulicas",
     FOOTER: "H-calc",
