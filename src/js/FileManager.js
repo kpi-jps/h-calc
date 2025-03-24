@@ -4,12 +4,13 @@
 const FileManager = Object.seal({
 
     /**
-     * @param {FileSystemFileHandle} fileHandle Stores the actual filehandle being handle by the application
+     * @type {?FileSystemFileHandle} fileHandle Stores the actual filehandle being handle by the application
      */
     fileHandle: null,
 
     /**
      * Gets the name of the file being handle by the application
+     * @returns {String}
      */
     getFileName() {
         if (this.fileHandle === null) throw new Error(Texts.NULL_FILE_HANDLE)
@@ -23,7 +24,7 @@ const FileManager = Object.seal({
     /**
      * Checks if the file being handle by the application has a valid structure 
      * @param {String} dataAsText The file content as a string
-     * @returns {Boolean}
+     * @returns {boolean}
      */
     isValidFileStructure(dataAsText) {
         function getHash(obj) {
@@ -54,7 +55,8 @@ const FileManager = Object.seal({
 
     /**
      * Creates a new file and assing its reference to the filehandle property
-     * @param {String} content 
+     * @param {String} content Content for file creation
+     * @return {Promise<?FileSystemHandle>}
      */
     async create(content) {
         const tempFileHandle = this.fileHandle
@@ -78,7 +80,6 @@ const FileManager = Object.seal({
 
     /**
      * Opens a file, assing its reference to the filehandle property and retuns your content as a string
-     * @param {String} content 
      * @returns {Promise<String | Error}
      */
     async open() {
@@ -112,8 +113,7 @@ const FileManager = Object.seal({
     async read() {
         try {
             const file = await FileManager.fileHandle.getFile()
-            const content = await file.text()
-            return content
+            return await file.text()
         } catch (error) {
             Promise.reject(error)
         }
@@ -122,12 +122,13 @@ const FileManager = Object.seal({
     /**
      * Saves the content in the file being handle by the application
      * @param {String} content The file content as a string
+     * @return {Promise<undefined>}
      */
     async save(content) {
         try {
             const writable = await this.fileHandle.createWritable()
             await writable.write(content)
-            await writable.close()
+            return await writable.close()
         } catch (error) {
             Promise.reject(error)
         }
