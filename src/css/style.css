@@ -1,0 +1,291 @@
+body {
+    margin: -22px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    cursor: default;
+}
+
+
+#modal-container {
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 2;
+    position: absolute;
+    background-color: rgba(104, 103, 103, 0.8);
+    top: 0;
+    left: 0;
+}
+
+#modal {
+    width: 60%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 10px;
+    z-index: 3;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+
+header,
+footer {
+    background-color: seagreen;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: white;
+    border-bottom: 1px solid green;
+    border-top: 1px solid green;
+}
+
+header>h1 {
+    position: relative;
+    top: 5px;
+    text-shadow: 2px 3px green;
+}
+
+header>h4 {
+    position: relative;
+    top: -10px;
+    color: white;
+}
+
+.menu {
+    position: relative;
+    top: -16px;
+    background-color: lightgreen;
+    line-height: 1rem;
+    color: black;
+    border-bottom: 1px solid green;
+    padding-left: 20px;
+    overflow: visible;
+}
+
+
+.menu-item {
+    display: inline-block;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    margin: 5px;
+    overflow: visible;
+}
+
+
+.submenu {
+    position: absolute;
+    display: block;
+    margin: 0;
+    background-color: lightgreen;
+    line-height: 1rem;
+    color: black;
+    border-bottom: 1px solid green;
+    text-align: center;
+    padding: 0;
+    z-index: 1;
+
+}
+
+.submenu-item {
+
+    text-align: center;
+    background-color: lightgreen;
+    list-style: none;
+    padding: 5px;
+    min-width: 100px;
+    text-align: left;
+}
+
+.menu-item:hover,
+.submenu-item:hover {
+    color: white
+}
+
+
+
+main {
+    margin: -20px auto 20px auto;
+    width: 95%;
+    padding: 10px;
+
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#main-ctrl {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    padding: 10px 0;
+}
+
+#main-ctrl label {
+    margin: 0 10px;
+}
+
+select,
+button {
+    border-radius: 5px;
+    font-size: 1.02rem;
+    padding: 6px;
+}
+
+.edit-btn,
+.del-btn,
+.save-btn,
+.back-btn,
+.print-btn {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 0;
+    font-size: 1.30rem;
+    border: 1px solid gray;
+    background-color: rgb(238, 236, 236);
+}
+
+.close-btn {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0;
+}
+
+.edit-btn::before {
+    content: "\01F4DD";
+}
+
+.save-btn::before {
+    content:"\01F4BE";
+}
+
+.back-btn::before {
+    content: "\276E";
+    font-size: 1.20rem;
+}
+
+.del-btn::before {
+    content: "\01F5D1";
+}
+
+.close-btn::before {
+    content: "\00D7";
+}
+
+.print-btn::before {
+    content: "\01F5A8"
+}
+
+fieldset {
+    margin: 10px auto;
+}
+
+#main-ctrl select,
+#main-ctrl button,
+fieldset select {
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+button {
+    margin-right: 10px;
+}
+
+select:hover,
+button:hover {
+    opacity: 0.8;
+}
+
+table {
+    margin: 15px auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 100%;
+    border-bottom: 1px solid green;
+}
+
+thead {
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    background-color: rgb(171, 236, 171);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(171, 236, 171);
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+.red-btn {
+    background-color: lightsalmon;
+    border: 1px solid red;
+
+}
+
+.green-btn {
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+input {
+    width: 50px;
+    border: 0 solid green;
+    border-bottom: 2px solid green;
+    padding: 6px;
+    font-size: 1.02rem;
+}
+
+input:focus {
+    background-color: lightgreen;
+    outline: 0;
+}
+
+label,
+fieldset div {
+    margin: 10px
+}
+
+#name-label {
+    width: 100%;
+}
+
+#name {
+    width: 80%;
+}
+
+@media print {
+    .menu {
+        display: none
+    }
+
+    button {
+        display: none
+    }
+
+    footer {
+        display: none;
+    }
+
+    header {
+        background-color: white;
+    }
+}
